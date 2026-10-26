@@ -1,0 +1,399 @@
+/* Estilo inspirado nos cardápios e letreiros clássicos dos anos 1950 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #2b090c; /* Fundo vinho escuro de cabaré clássico */
+  color: #2c1a1d;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  line-height: 1.6;
+}
+
+.pagina-copa {
+  max-width: 900px;
+  margin: 30px auto;
+  background-color: #f9f3e3; /* Tom papel creme antigo */
+  border: 4px double #c59b27; /* Borda dupla dourada */
+  border-radius: 4px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6);
+  min-height: 85vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* CABEÇALHO */
+.cabecalho {
+  background-color: #4a0e17;
+  color: #f9f3e3;
+  padding: 25px 20px;
+  text-align: center;
+  border-bottom: 3px solid #c59b27;
+}
+
+.ano-fundacao {
+  font-size: 0.8rem;
+  letter-spacing: 3px;
+  color: #e0b84c;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.cabecalho h1 {
+  font-size: 2.4rem;
+  color: #f3cf68;
+  font-style: italic;
+  margin-bottom: 6px;
+}
+
+.barra-ambiente {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px dashed rgba(197, 155, 39, 0.5);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* CONTEÚDO PRINCIPAL */
+.conteudo-principal {
+  padding: 25px;
+  flex: 1;
+}
+
+h2 {
+  color: #4a0e17;
+  border-bottom: 2px solid #c59b27;
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+
+.subtitulo-secao {
+  margin-bottom: 20px;
+  color: #553b3e;
+}
+
+/* 1. MENU SUSPENSO (DROPDOWN) */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-botao {
+  background-color: #c59b27;
+  color: #2b090c;
+  border: 1px solid #f3cf68;
+  padding: 8px 14px;
+  font-family: inherit;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.dropdown-lista {
+  position: absolute;
+  right: 0;
+  top: 110%;
+  background-color: #fffdf7;
+  border: 2px solid #4a0e17;
+  list-style: none;
+  min-width: 240px;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.dropdown-lista li button {
+  width: 100%;
+  text-align: left;
+  padding: 10px 12px;
+  border: none;
+  border-bottom: 1px solid #e6dcc5;
+  background: none;
+  font-family: inherit;
+  color: #2b090c;
+  cursor: pointer;
+}
+
+.dropdown-lista li button:hover {
+  background-color: #f3e5c2;
+  font-weight: bold;
+}
+
+/* 2. ABAS (TABS) */
+.abas-topo {
+  display: flex;
+  border-bottom: 2px solid #4a0e17;
+  margin-bottom: 20px;
+  gap: 6px;
+}
+
+.aba-botao {
+  padding: 10px 18px;
+  background-color: #e8dec5;
+  border: 1px solid #4a0e17;
+  border-bottom: none;
+  font-family: inherit;
+  font-size: 1rem;
+  color: #4a0e17;
+  cursor: pointer;
+  border-radius: 4px 4px 0 0;
+}
+
+.aba-botao.ativa {
+  background-color: #4a0e17;
+  color: #f3cf68;
+  font-weight: bold;
+}
+
+/* CARTÕES DE ATRAÇÕES */
+.lista-cartoes {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.cartao-copa {
+  background-color: #fffdf8;
+  border: 1px solid #c59b27;
+  padding: 16px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cartao-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.cartao-topo h3 {
+  color: #4a0e17;
+  font-size: 1.1rem;
+}
+
+.etiqueta-horario {
+  background-color: #4a0e17;
+  color: #f3cf68;
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.botao-acao {
+  margin-top: 14px;
+  background-color: #4a0e17;
+  color: #f9f3e3;
+  border: 1px solid #c59b27;
+  padding: 8px 14px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.botao-acao:hover {
+  background-color: #681622;
+}
+
+.botao-secundario {
+  margin-top: 14px;
+  background-color: #e8dec5;
+  color: #2b090c;
+  border: 1px solid #4a0e17;
+  padding: 8px 14px;
+  font-family: inherit;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* 3. PAGINAÇÃO */
+.paginacao {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.paginacao button {
+  padding: 6px 12px;
+  border: 1px solid #4a0e17;
+  background-color: #fffdf8;
+  color: #4a0e17;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.paginacao button.pagina-ativa {
+  background-color: #4a0e17;
+  color: #f3cf68;
+  font-weight: bold;
+}
+
+.paginacao button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+/* 4. BARRA DE PROGRESSO */
+.progresso-container {
+  background-color: #fffdf8;
+  border: 1px solid #c59b27;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.progresso-cabecalho {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.progresso-trilho {
+  width: 100%;
+  height: 22px;
+  background-color: #e2d6b5;
+  border: 1px solid #4a0e17;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progresso-preenchimento {
+  height: 100%;
+  background-color: #4a0e17;
+  transition: width 0.4s ease;
+}
+
+.botoes-progresso {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+/* 5. ACORDEÃO */
+.acordeao-item {
+  border: 1px solid #c59b27;
+  margin-bottom: 10px;
+  background-color: #fffdf8;
+}
+
+.acordeao-botao {
+  width: 100%;
+  padding: 12px 15px;
+  background-color: #f1e6cc;
+  border: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #4a0e17;
+  cursor: pointer;
+  text-align: left;
+}
+
+/* Transição suave exigida na atividade */
+.acordeao-conteudo {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 15px;
+}
+
+.acordeao-conteudo.aberto {
+  max-height: 200px;
+  padding: 12px 15px;
+  border-top: 1px dashed #c59b27;
+}
+
+/* 6. NOTIFICAÇÃO TOAST */
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: 12px 18px;
+  border-radius: 4px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  z-index: 50;
+}
+
+.toast-sucesso {
+  background-color: #1f5c2e;
+  border: 2px solid #c59b27;
+}
+
+.toast-erro {
+  background-color: #8a1c1c;
+  border: 2px solid #f3cf68;
+}
+
+.toast-info {
+  background-color: #4a0e17;
+  border: 2px solid #c59b27;
+}
+
+.toast-fechar {
+  background: none;
+  border: none;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+/* RODAPÉ */
+.rodape {
+  text-align: center;
+  padding: 15px;
+  background-color: #eee2c4;
+  border-top: 1px solid #c59b27;
+  font-size: 0.85rem;
+}
+
+/* RESPONSIVIDADE (Mobile e Tablet) */
+@media (max-width: 768px) {
+  .pagina-copa {
+    margin: 0;
+    border-width: 2px;
+  }
+
+  .cabecalho h1 {
+    font-size: 1.8rem;
+  }
+
+  .barra-ambiente {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .dropdown-lista {
+    left: 0;
+    right: 0;
+  }
+
+  .abas-topo {
+    flex-direction: column;
+  }
+
+  .lista-cartoes {
+    grid-template-columns: 1fr;
+  }
+
+  .botoes-progresso {
+    flex-direction: column;
+  }
+}
