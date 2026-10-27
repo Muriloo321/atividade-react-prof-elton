@@ -1,18 +1,16 @@
 import { useState, useEffect, useRef } from 'react';
 import './App.css';
 
-// ==========================================
-// 1. COMPONENTE: ACORDEÃO (Accordion)
-// ==========================================
+// 1. ACORDEÃO (Accordion)
 function Acordeao({ itens }) {
   // Guarda o índice de qual pergunta está aberta (apenas uma por vez)
   const [indiceAberto, setIndiceAberto] = useState(0);
 
   function alternarItem(index) {
     if (indiceAberto === index) {
-      setIndiceAberto(null); // Fecha se clicar no mesmo
+      setIndiceAberto(null); // vai fechar se clicar no mesmo
     } else {
-      setIndiceAberto(index); // Abre o novo
+      setIndiceAberto(index); // Pra abrir o  novo
     }
   }
 
@@ -40,9 +38,7 @@ function Acordeao({ itens }) {
   );
 }
 
-// ==========================================
-// 2. COMPONENTE: PAGINAÇÃO (Pagination)
-// ==========================================
+// 2. PAGINAÇÃO (Paginatio
 function Paginacao({ paginaAtual, totalPaginas, aoMudarPagina }) {
   const paginas = [];
   for (let i = 1; i <= totalPaginas; i++) {
@@ -79,9 +75,7 @@ function Paginacao({ paginaAtual, totalPaginas, aoMudarPagina }) {
   );
 }
 
-// ==========================================
-// 3. COMPONENTE: BARRA DE PROGRESSO (Progress Bar)
-// ==========================================
+// 3. BARRA DE PROGRESSO (Progress Bar)
 function BarraProgresso({ valor, rotulo }) {
   return (
     <div className="progresso-container">
@@ -105,9 +99,8 @@ function BarraProgresso({ valor, rotulo }) {
   );
 }
 
-// ==========================================
-// 4. COMPONENTE: ABAS (Tabs)
-// ==========================================
+// 4. ABAS (Tabs)
+
 function Abas({ abas }) {
   const [abaAtiva, setAbaAtiva] = useState(0);
 
@@ -133,9 +126,7 @@ function Abas({ abas }) {
   );
 }
 
-// ==========================================
-// 5. COMPONENTE: MENU SUSPENSO (Dropdown Menu)
-// ==========================================
+// 5. MENU SUSPENSO (Dropdown Menu)
 function MenuSuspenso({ titulo, opcoes }) {
   const [aberto, setAberto] = useState(false);
   const menuRef = useRef(null);
@@ -181,9 +172,7 @@ function MenuSuspenso({ titulo, opcoes }) {
   );
 }
 
-// ==========================================
 // 6. COMPONENTE: NOTIFICAÇÃO TOAST
-// ==========================================
 function NotificacaoToast({ mensagem, tipo, aoFechar }) {
   // Desaparece sozinho após 3,5 segundos
   useEffect(() => {
@@ -207,9 +196,7 @@ function NotificacaoToast({ mensagem, tipo, aoFechar }) {
   );
 }
 
-// ==========================================
 // COMPONENTE PRINCIPAL (App)
-// ==========================================
 export default function App() {
   const [salaoAtual, setSalaoAtual] = useState('Salão Imperial (Palco Jazz)');
   const [paginaAtual, setPaginaAtual] = useState(1);
@@ -220,7 +207,7 @@ export default function App() {
     setToast({ mensagem, tipo });
   }
 
-  // Dados para a Paginação (6 atrações/clássicos divididos em 2 por página = 3 páginas)
+  // Devo relembrar: abaixo são os dados para a Paginação (6 atrações/clássicos divididos em 2 por página = 3 páginas)
   const atracoes = [
     {
       id: 1,
@@ -268,7 +255,7 @@ export default function App() {
     indiceInicial + itensPorPagina
   );
 
-  // Opções do Menu Suspenso
+  // Opções dentro do Menu Suspenso
   const opcoesAmbiente = [
     {
       nome: 'Salão Imperial (Palco Jazz)',
