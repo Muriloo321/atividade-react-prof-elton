@@ -17,6 +17,10 @@ Todos os 6 componentes obrigatórios foram implementados no arquivo `src/App.jsx
 5- Menu Suspenso (`MenuSuspenso`): Localizado no cabeçalho para permitir a troca do setor/ambiente do clube (Salão Imperial, Lounge Velvet ou Terraço Tropicana), fechando automaticamente ao selecionar uma opção ou ao clicar fora dele.
 6- Notificação Toast (`NotificacaoToast`): Exibe avisos temporários no canto inferior direito da tela sempre que o usuário solicita um item na mesa, altera o ambiente ou avança etapas da reserva.
 
+<img width="940" height="812" alt="{0BE8B4A3-1971-40D6-88A5-741F51EAE0AF}" src="https://github.com/user-attachments/assets/27fbb62c-e123-4e7a-b284-bc5f796d69e2" />
+
+
+
 ## Tecnologias Utilizadas
 
 - React.js (com Vite)
